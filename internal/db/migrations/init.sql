@@ -20,4 +20,13 @@ CREATE TABLE IF NOT EXISTS transactions (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Insert initial data for Gateways
+INSERT INTO gateways (id, name, priority, data_format, protocol) 
+VALUES (1, 'GatewayA', 1, 'JSON', 'HTTP') 
+ON CONFLICT (id) DO NOTHING;
+
+INSERT INTO gateways (id, name, priority, data_format, protocol) 
+VALUES (2, 'GatewayB', 2, 'XML', 'HTTP') 
+ON CONFLICT (id) DO NOTHING;
+
 
